@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBE82172841250200FBE06C /* ExploreViewController.swift */; };
 		7CCD4D052840DDAB00019AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD4D042840DDAB00019AFD /* AppDelegate.swift */; };
 		7CCD4D072840DDAB00019AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD4D062840DDAB00019AFD /* SceneDelegate.swift */; };
 		7CCD4D092840DDAB00019AFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD4D082840DDAB00019AFD /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CBE82172841250200FBE06C /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		7CCD4D012840DDAB00019AFD /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCD4D042840DDAB00019AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CCD4D062840DDAB00019AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CBE8216284124DD00FBE06C /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				7CBE82172841250200FBE06C /* ExploreViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		7CCD4CF82840DDAB00019AFD = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		7CCD4D032840DDAB00019AFD /* LetsEat */ = {
 			isa = PBXGroup;
 			children = (
+				7CBE8216284124DD00FBE06C /* Explore */,
 				7CCD4D042840DDAB00019AFD /* AppDelegate.swift */,
 				7CCD4D062840DDAB00019AFD /* SceneDelegate.swift */,
 				7CCD4D082840DDAB00019AFD /* ViewController.swift */,
@@ -74,6 +85,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CCD4D152840DDAD00019AFD /* Build configuration list for PBXNativeTarget "LetsEat" */;
 			buildPhases = (
+				7CBE82192841256E00FBE06C /* SwiftLint */,
 				7CCD4CFD2840DDAB00019AFD /* Sources */,
 				7CCD4CFE2840DDAB00019AFD /* Frameworks */,
 				7CCD4CFF2840DDAB00019AFD /* Resources */,
@@ -133,11 +145,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7CBE82192841256E00FBE06C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7CCD4CFD2840DDAB00019AFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */,
 				7CCD4D092840DDAB00019AFD /* ViewController.swift in Sources */,
 				7CCD4D052840DDAB00019AFD /* AppDelegate.swift in Sources */,
 				7CCD4D072840DDAB00019AFD /* SceneDelegate.swift in Sources */,
@@ -290,6 +324,7 @@
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LetsEat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GoEat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +353,7 @@
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LetsEat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GoEat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
