@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C6FF6C028434671002ED2E5 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FF6BF28434671002ED2E5 /* RestaurantListViewController.swift */; };
 		7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBE82172841250200FBE06C /* ExploreViewController.swift */; };
 		7CCD4D052840DDAB00019AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD4D042840DDAB00019AFD /* AppDelegate.swift */; };
 		7CCD4D072840DDAB00019AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD4D062840DDAB00019AFD /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C6FF6BF28434671002ED2E5 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		7CBE82172841250200FBE06C /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		7CCD4D012840DDAB00019AFD /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCD4D042840DDAB00019AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6FF6BE28434636002ED2E5 /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				7C6FF6BF28434671002ED2E5 /* RestaurantListViewController.swift */,
+			);
+			path = Restaurants;
+			sourceTree = "<group>";
+		};
 		7CBE8216284124DD00FBE06C /* Explore */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		7CCD4D032840DDAB00019AFD /* LetsEat */ = {
 			isa = PBXGroup;
 			children = (
+				7C6FF6BE28434636002ED2E5 /* Restaurants */,
 				7CBE8216284124DD00FBE06C /* Explore */,
 				7CCD4D042840DDAB00019AFD /* AppDelegate.swift */,
 				7CCD4D062840DDAB00019AFD /* SceneDelegate.swift */,
@@ -173,6 +184,7 @@
 			files = (
 				7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */,
 				7CCD4D092840DDAB00019AFD /* ViewController.swift in Sources */,
+				7C6FF6C028434671002ED2E5 /* RestaurantListViewController.swift in Sources */,
 				7CCD4D052840DDAB00019AFD /* AppDelegate.swift in Sources */,
 				7CCD4D072840DDAB00019AFD /* SceneDelegate.swift in Sources */,
 			);
@@ -335,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.LetsEat;
+				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.GoEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -364,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.LetsEat;
+				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.GoEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

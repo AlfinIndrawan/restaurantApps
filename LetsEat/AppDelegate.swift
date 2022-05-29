@@ -3,7 +3,6 @@
 //  LetsEat
 //
 
-
 import UIKit
 
 @main
