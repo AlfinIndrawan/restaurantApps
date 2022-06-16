@@ -10,10 +10,6 @@ import UIKit
 class RestaurantListViewController: UIViewController {
   @IBOutlet var collectionView: UICollectionView!
   
-  
-  
-  
-  
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -22,7 +18,6 @@ class RestaurantListViewController: UIViewController {
 }
 
 extension RestaurantListViewController: UICollectionViewDelegate {
-  
   
 }
 

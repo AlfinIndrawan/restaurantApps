@@ -1,16 +1,14 @@
-//
-//  ExploreViewController.swift
-//  LetsEat
-//
-
 import UIKit
+
+// swiftlint:disable force_cast
 
 class ExploreViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
-    
+    let manager = ExploreDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        manager.fetch()
     }
 
     @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
@@ -26,10 +24,13 @@ extension ExploreViewController: UICollectionViewDelegate {
 
 extension ExploreViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      20
+    manager.numberOfExploreItems()
   }
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath)
-      return cell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath) as! ExploreCell
+    let exploreItem = manager.exploreItem(at: indexPath.row)
+    cell.exploreNameLabel.text = exploreItem.name
+    cell.exploreImageView.image = UIImage(named: exploreItem.image!)
+    return cell
   }
 }

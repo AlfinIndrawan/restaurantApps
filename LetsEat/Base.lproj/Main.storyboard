@@ -304,7 +304,7 @@
                                     <inset key="sectionInset" minX="20" minY="5" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exploreCell" id="xmj-er-jVj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exploreCell" id="xmj-er-jVj" customClass="ExploreCell" customModule="LetsEat" customModuleProvider="target">
                                         <rect key="frame" x="113" y="105" width="188" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cMd-R8-ivT">
@@ -313,7 +313,18 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMD-au-PCH">
                                                     <rect key="frame" x="0.0" y="0.0" width="188" height="148"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDs-qE-sLW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="188" height="148"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="SDs-qE-sLW" firstAttribute="leading" secondItem="EMD-au-PCH" secondAttribute="leading" id="6vR-Yc-9AE"/>
+                                                        <constraint firstItem="SDs-qE-sLW" firstAttribute="top" secondItem="EMD-au-PCH" secondAttribute="top" id="SOZ-NU-yKc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SDs-qE-sLW" secondAttribute="trailing" id="XwK-cR-VQw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SDs-qE-sLW" secondAttribute="bottom" id="x85-Ls-uXf"/>
+                                                    </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av3-Xl-GTA">
                                                     <rect key="frame" x="8" y="157" width="172" height="21"/>
@@ -338,6 +349,8 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="188" height="188"/>
                                         <connections>
+                                            <outlet property="exploreImageView" destination="SDs-qE-sLW" id="vJw-MZ-a5I"/>
+                                            <outlet property="exploreNameLabel" destination="av3-Xl-GTA" id="dLe-kP-0qV"/>
                                             <segue destination="btX-LA-UpQ" kind="show" id="hmg-dd-fUg"/>
                                         </connections>
                                     </collectionViewCell>
