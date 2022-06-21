@@ -3,6 +3,7 @@ import UIKit
 // swiftlint:disable force_cast
 
 class ExploreViewController: UIViewController {
+  
     @IBOutlet var collectionView: UICollectionView!
     let manager = ExploreDataManager()
     override func viewDidLoad() {
