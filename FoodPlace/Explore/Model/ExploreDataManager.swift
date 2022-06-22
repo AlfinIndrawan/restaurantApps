@@ -1,12 +1,14 @@
 import Foundation
 
-class ExploreDataManager {
+//swiftlint:disable force_cast
+
+class ExploreDataManager: DataManager {
   // exploreitems with explore item in struct
   private var exploreItems: [ExploreItem] = []
   
   func fetch() {
-    for data in loadData() {
-      exploreItems.append(ExploreItem(dict: data))
+    for data in loadPlist(file: "ExploreData") {
+      exploreItems.append(ExploreItem(dict: data as! [String: String]))
     }
   }
   private func loadData() -> [[String: String]] {
