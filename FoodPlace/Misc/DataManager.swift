@@ -8,7 +8,7 @@ protocol DataManager {
 
 // Any class that adopts this protocol will get the loadPlist(file:) method. This method looks for a .plist file specified in the name parameter inside the application bundle.
 
-//swiftlint:disable force_try
+// swiftlint:disable force_try
 extension DataManager {
   func loadPlist(file name: String) -> [[String: AnyObject]] {
     guard let path = Bundle.main.path(forResource: name, ofType: "plist"),

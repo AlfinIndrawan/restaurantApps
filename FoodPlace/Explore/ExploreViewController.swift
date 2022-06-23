@@ -9,21 +9,22 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        manager.fetch()
+        initialize()
     }
 
-    @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
-    }
+
 }
 
 extension ExploreViewController: UICollectionViewDelegate {
+
+}
+
+extension ExploreViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
       let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
       return headerView
   }
-}
-
-extension ExploreViewController: UICollectionViewDataSource {
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     manager.numberOfExploreItems()
   }
@@ -35,3 +36,13 @@ extension ExploreViewController: UICollectionViewDataSource {
     return cell
   }
 }
+
+// MARK: Private Extension
+private extension ExploreViewController {
+  func initialize() {
+    manager.fetch()
+  }
+  @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
+  }
+}
+

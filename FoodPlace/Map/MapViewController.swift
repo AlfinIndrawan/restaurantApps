@@ -3,16 +3,36 @@ import MapKit
 
 // Displaying MKAnnotationView instances on the map view
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController {
 
   @IBOutlet var mapView: MKMapView!
   private let manager = MapDataManager()
-  
+  var selectedRestaurant: RestaurantItem?
   override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
     }
+  // pass the RestaurantItem instance from the MapViewController instance to the RestaurantDetailViewController instanc
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier! {
+    case Segue.showDetail.rawValue:
+      showRestaurantDetail(segue: segue)
+    default:
+      print("Segue not added")
+    }
+  }
    
+}
+
+// MARK: Private Extension
+
+private extension MapViewController {
+  //  The fetch(completion:) method loads the MapLocations.plist file and creates and assigns the array of RestaurantItem instances to the items array. The annotations property returns a copy of the items array.
+  func initialize() {
+    mapView.delegate = self
+    manager.fetch {(annotations) in setupMap(annotations)}
+  }
+  
   // The setupMap(_:) method takes a parameter, annotations, which is an array of RestaurantItem instances. It sets the region of the map to be displayed in the map view using the initialRegion(latDelta:longDelta:) method of the MapDataManager class, then adds each RestaurantItem instance in the annotations array to the map view.
   // The map view's delegate (the MapViewController class in this case) then automatically provides an MKAnnotationView instance for every RestaurantItem instance within the region.
   
@@ -21,9 +41,27 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     mapView.addAnnotations(manager.annotations)
   }
   
+  func showRestaurantDetail(segue: UIStoryboardSegue) {
+    // This checks to make sure the segue destination is a RestaurantDetailViewController instance. If it is, a temporary constant, restaurant, is assigned the selectedRestaurant property in the MapViewController instance
+    if let viewController = segue.destination as? RestaurantDetailViewController,
+       let restaurant = selectedRestaurant {
+    // restaurant is then assigned to the selectedRestaurant property in the RestaurantDetailViewController instance.
+      viewController.selectedRestaurant = restaurant
+    }
+  }
+}
+
+// MARK: MKMapViewDelegate
+
+extension MapViewController: MKMapViewDelegate {
+  
   // mapView(_:annotationView:calloutAccessoryControlTapped:) is another method specified in the MKMapViewDelegate protocol. It is triggered when the user taps the callout bubble button.
   func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-    
+  // This gets the RestaurantItem instance associated with MKAnnotationView instance that was tapped and assigns it to selectedRestaurant.
+    guard let annotation = mapView.selectedAnnotations.first else {
+      return
+    }
+    selectedRestaurant = annotation as? RestaurantItem
   // self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self) performs the segue with the "showDetail" identifier, which presents the Restaurant Detail screen.
     self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
   }
@@ -66,9 +104,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     return annotationView
   }
   
-  //  The fetch(completion:) method loads the MapLocations.plist file and creates and assigns the array of RestaurantItem instances to the items array. The annotations property returns a copy of the items array.
-  func initialize() {
-    mapView.delegate = self
-    manager.fetch {(annotations) in setupMap(annotations)}
-  }
+ 
 }
+

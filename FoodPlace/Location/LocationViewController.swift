@@ -7,7 +7,7 @@ class LocationViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.fetch()
+        initialize()
       
     }
 }
@@ -24,3 +24,10 @@ extension LocationViewController: UITableViewDataSource {
   }
     
 }
+// MARK: Private Extension
+private extension LocationViewController {
+  func initialize() {
+    manager.fetch()
+  }
+}
+

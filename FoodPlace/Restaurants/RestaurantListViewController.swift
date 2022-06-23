@@ -30,3 +30,8 @@ extension RestaurantListViewController: UICollectionViewDataSource {
   }
   
 }
+
+// MARK: Private Extension
+private extension RestaurantListViewController {
+  
+}

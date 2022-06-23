@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7CCD4D002840DDAB00019AFD"
-               BuildableName = "LetsEat.app"
+               BuildableName = "FoodPlace.app"
                BlueprintName = "FoodPlace"
                ReferencedContainer = "container:FoodPlace.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7CCD4D002840DDAB00019AFD"
-            BuildableName = "LetsEat.app"
+            BuildableName = "FoodPlace.app"
             BlueprintName = "FoodPlace"
             ReferencedContainer = "container:FoodPlace.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7CCD4D002840DDAB00019AFD"
-            BuildableName = "LetsEat.app"
+            BuildableName = "FoodPlace.app"
             BlueprintName = "FoodPlace"
             ReferencedContainer = "container:FoodPlace.xcodeproj">
          </BuildableReference>
