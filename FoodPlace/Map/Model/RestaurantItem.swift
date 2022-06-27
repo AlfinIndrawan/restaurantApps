@@ -1,7 +1,7 @@
 import UIKit
 import MapKit
 
-class RestaurantItem: NSObject, MKAnnotation {
+class RestaurantItem: NSObject, MKAnnotation, Decodable {
   let name: String?
   let cuisines: [String]
   let lat: Double?
@@ -12,18 +12,18 @@ class RestaurantItem: NSObject, MKAnnotation {
   let imageURL: String?
   let restaurantID: Int?
   
-  // use a custom initializer to initialize RestaurantItem instances with data
-  // from the .plist file.
-  init(dict: [String: AnyObject]) {
-    self.lat = dict["lat"] as? Double
-    self.long = dict["long"] as? Double
-    self.name = dict["name"] as? String
-    self.cuisines = dict["cuisines"] as? [String] ?? []
-    self.address = dict["address"] as? String
-    self.postalCode = dict["postalCode"] as? String
-    self.state = dict["state"] as? String
-    self.imageURL = dict["image_url"] as? String
-    self.restaurantID = dict["id"] as? Int
+// The CodingKeys enumeration matches the RestaurantItem class properties to the keys in the JSON file.
+// if the key name does not match the property name, you can map the key to the property, as shown in the preceding code block for postalCode, imageURL, and restaurantID.
+  enum CodingKeys: String, CodingKey {
+    case name
+    case cuisines
+    case lat
+    case long
+    case address
+    case postalCode = "postal_code"
+    case state
+    case imageURL = "image_url"
+    case restaurantID = "id"
   }
   
   var coordinate: CLLocationCoordinate2D {

@@ -369,7 +369,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="9KV-6y-KOD">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="9KV-6y-KOD" customClass="ExploreHeaderView" customModule="FoodPlace" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -433,6 +433,9 @@
                                         <constraint firstItem="j5S-Ax-2lh" firstAttribute="leading" secondItem="9KV-6y-KOD" secondAttribute="leading" id="EOi-co-rbe"/>
                                         <constraint firstItem="j5S-Ax-2lh" firstAttribute="top" secondItem="9KV-6y-KOD" secondAttribute="top" id="V8A-E2-ZB9"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="locationLabel" destination="XwL-0c-KTv" id="c2N-uZ-wx2"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="S6r-dZ-XyP" id="n8G-SR-NXS"/>

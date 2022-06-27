@@ -20,15 +20,13 @@ class MapDataManager: DataManager {
     }
     return items
   }
-  // method used here has a completion closure as a parameter, which can accept any function or closure that takes an array of RestaurantItems as a parameter:
+  // This method has a completion method parameter. The completion method will be used to process the result when the method has finished execution.
   func fetch(completion: (_ annotations: [RestaurantItem]) -> ()) {
-    if !items.isEmpty {
-      items.removeAll()
-    }
-    for data in loadPlist(file: "MapLocations") {
-      items.append(RestaurantItem(dict: data))
-      }
-    completion(items)
+    let manager = RestaurantDataManager()
+    // This calls the manager instance's fetch() method to get a list of restaurants from Boston.json. This is hardcoded for now as the iOS Simulator does not have a functional GPS. To see restaurants at a different location, change the name of the JSON file used to another location.
+    manager.fetch(location: "Boston", completionHandler: {(restaurantItems) in self.items = restaurantItems
+      completion(items)
+    })
   }
   
   //  This method takes two parameters and returns an MKCoordinateRegion instance. latDelta specifies the north-to-south distance (measured in degrees) to display for the map region.

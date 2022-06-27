@@ -1,6 +1,6 @@
 import Foundation
 
-//swiftlint:disable force_cast
+// swiftlint:disable force_cast
 
 class ExploreDataManager: DataManager {
   // exploreitems with explore item in struct

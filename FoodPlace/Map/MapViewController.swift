@@ -99,11 +99,9 @@ extension MapViewController: MKMapViewDelegate {
     annotationView.canShowCallout = true
     if let image = UIImage(named: "custom-annotation") {
       annotationView.image = image
-      annotationView.centerOffset = CGPoint ( x: -image.size.width/2, y: -image.size.width/2)
+      annotationView.centerOffset = CGPoint( x: -image.size.width/2, y: -image.size.width/2)
     }
     return annotationView
   }
   
- 
 }
-

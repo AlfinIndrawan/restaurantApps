@@ -6,7 +6,7 @@ struct ExploreItem {
 }
 
 extension ExploreItem {
-  init (dict: [String:String]) {
+  init (dict: [String: String]) {
     self.name = dict["name"]
     self.image = dict["image"]
   }
