@@ -11,6 +11,13 @@ class LocationViewController: UIViewController {
         initialize()
       
     }
+  private func setCheckmark(for cell: UITableViewCell, location: LocationItem) {
+  if selectedCity == location {
+    cell.accessoryType = .checkmark
+  } else {
+    cell.accessoryType = .none
+    }
+  }
 }
 
 extension LocationViewController: UITableViewDataSource {
@@ -22,6 +29,7 @@ extension LocationViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
     let location = manager.locationItem(at: indexPath.row)
     cell.textLabel?.text = location.cityAndState
+    setCheckmark(for: cell, location: location)
     return cell
   }
     
@@ -41,6 +49,7 @@ extension LocationViewController: UITableViewDelegate {
     if let cell = tableView.cellForRow(at: indexPath) {
       cell.accessoryType = .checkmark
       selectedCity = manager.locationItem(at: indexPath.row)
+      tableView.reloadData()
     }
   }
 }

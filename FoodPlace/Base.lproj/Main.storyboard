@@ -365,7 +365,7 @@
                                         <connections>
                                             <outlet property="exploreImageView" destination="SDs-qE-sLW" id="vJw-MZ-a5I"/>
                                             <outlet property="exploreNameLabel" destination="av3-Xl-GTA" id="dLe-kP-0qV"/>
-                                            <segue destination="btX-LA-UpQ" kind="show" id="hmg-dd-fUg"/>
+                                            <segue destination="btX-LA-UpQ" kind="show" identifier="restaurantList" id="hmg-dd-fUg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -383,7 +383,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-A9-wAj">
-                                                    <rect key="frame" x="8" y="40" width="261" height="37"/>
+                                                    <rect key="frame" x="8" y="40" width="146" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="Ufv-gM-ejn"/>
                                                     </constraints>
@@ -398,16 +398,19 @@
                                                         <constraint firstAttribute="height" constant="1" id="2e9-re-SOh"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-im-bKS">
-                                                    <rect key="frame" x="310" y="45" width="96" height="25"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSK-Kd-DOR">
+                                                    <rect key="frame" x="296" y="40" width="110" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="Xza-gD-o7S"/>
-                                                        <constraint firstAttribute="height" constant="25" id="pp7-ym-b1o"/>
+                                                        <constraint firstAttribute="width" constant="110" id="OIB-sh-aiB"/>
+                                                        <constraint firstAttribute="height" constant="31" id="k7T-Mx-jgq"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="btn-location"/>
+                                                    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="+ LOCATION" cornerStyle="capsule" titleAlignment="center">
+                                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="baseBackgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </buttonConfiguration>
                                                     <connections>
-                                                        <segue destination="pOv-Zv-uq3" kind="presentation" id="s7T-Ca-giO"/>
+                                                        <segue destination="pOv-Zv-uq3" kind="presentation" identifier="locationList" id="ZGw-LM-SHu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -416,12 +419,11 @@
                                                 <constraint firstItem="XwL-0c-KTv" firstAttribute="leading" secondItem="j5S-Ax-2lh" secondAttribute="leading" constant="8" id="5kk-JD-ZP8"/>
                                                 <constraint firstItem="XwL-0c-KTv" firstAttribute="top" secondItem="j5S-Ax-2lh" secondAttribute="top" constant="24" id="71f-yh-PUO"/>
                                                 <constraint firstItem="FNl-A9-wAj" firstAttribute="top" secondItem="XwL-0c-KTv" secondAttribute="bottom" id="9O0-K4-RFx"/>
-                                                <constraint firstItem="3fX-im-bKS" firstAttribute="top" secondItem="XwL-0c-KTv" secondAttribute="bottom" constant="5" id="A8e-4q-Fei"/>
-                                                <constraint firstItem="3fX-im-bKS" firstAttribute="leading" secondItem="FNl-A9-wAj" secondAttribute="trailing" constant="41" id="fRh-by-AK0"/>
                                                 <constraint firstAttribute="trailing" secondItem="W9t-hP-qs0" secondAttribute="trailing" constant="8" id="hs9-VU-9kD"/>
+                                                <constraint firstItem="jSK-Kd-DOR" firstAttribute="top" secondItem="XwL-0c-KTv" secondAttribute="bottom" id="iJx-wK-4Ry"/>
                                                 <constraint firstItem="FNl-A9-wAj" firstAttribute="leading" secondItem="j5S-Ax-2lh" secondAttribute="leading" constant="8" id="ijL-TF-hZB"/>
-                                                <constraint firstAttribute="trailing" secondItem="3fX-im-bKS" secondAttribute="trailing" constant="8" id="lHh-wQ-3dd"/>
                                                 <constraint firstItem="W9t-hP-qs0" firstAttribute="leading" secondItem="j5S-Ax-2lh" secondAttribute="leading" constant="8" id="nlu-K6-OXR"/>
+                                                <constraint firstItem="jSK-Kd-DOR" firstAttribute="leading" secondItem="FNl-A9-wAj" secondAttribute="trailing" constant="142" id="u4T-pl-ZGR"/>
                                                 <constraint firstAttribute="height" constant="90" id="vaT-1q-hBE"/>
                                                 <constraint firstAttribute="trailing" secondItem="XwL-0c-KTv" secondAttribute="trailing" constant="8" id="vnZ-D5-3UX"/>
                                                 <constraint firstAttribute="bottom" secondItem="W9t-hP-qs0" secondAttribute="bottom" id="yuq-Rk-5DJ"/>
@@ -512,7 +514,11 @@
                                 <segue destination="BBc-G3-1WV" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="C1A-S6-CCF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KhC-Tp-K4t"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KhC-Tp-K4t">
+                            <connections>
+                                <segue destination="BBc-G3-1WV" kind="unwind" unwindAction="unwindLocationDoneWithSegue:" id="Eoa-6P-fc9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ADh-Tz-O7H" id="qD0-Cw-KRa"/>
@@ -600,7 +606,6 @@
     </scenes>
     <resources>
         <image name="american" width="88.5" height="64.5"/>
-        <image name="btn-location" width="96" height="25"/>
         <image name="icon-explore-on" width="35" height="23"/>
         <image name="icon-map-on" width="16" height="22"/>
         <image name="time-bg" width="68" height="27"/>

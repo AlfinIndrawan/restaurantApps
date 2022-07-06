@@ -8,12 +8,22 @@
 import UIKit
 
 class RestaurantListViewController: UIViewController {
+  var selectedRestaurant: RestaurantItem?
+  var selectedCity: LocationItem?
+  var selectedCuisine: String?
   @IBOutlet var collectionView: UICollectionView!
   
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
       
     }
+  // viewDidAppear() is called every time a view controller's view appears onscreen, while viewDidLoad() is only called once when a view controller initially loads its view.
+  //  viewDidAppear() is used here because the RestaurantListViewController instance will show a different list of restaurants each time its view appears onscreen, depending on the choices made by the user.
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    print("selected city \(selectedCity as Any)")
+    print("selected cuisine \(selectedCuisine as Any)")
+  }
   
 }
 
