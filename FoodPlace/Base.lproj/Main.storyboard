@@ -69,7 +69,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="OJz-r2-flg">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="OJz-r2-flg" customClass="RestaurantCell" customModule="FoodPlace" customModuleProvider="target">
                                         <rect key="frame" x="39.5" y="0.0" width="335" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xel-Gc-xPY">
@@ -185,6 +185,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="cuisineLabel" destination="Ac5-Cx-s2z" id="DJp-TF-H7d"/>
+                                            <outlet property="restaurantImageView" destination="qKJ-pO-JQ4" id="S6X-73-Phh"/>
+                                            <outlet property="titleLabel" destination="f0Z-BY-H53" id="Qru-FR-3fc"/>
                                             <segue destination="hFx-Y2-TXb" kind="show" id="UMa-2U-saX"/>
                                         </connections>
                                     </collectionViewCell>

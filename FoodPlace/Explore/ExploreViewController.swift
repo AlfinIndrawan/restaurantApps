@@ -1,7 +1,5 @@
 import UIKit
 
-// swiftlint:disable force_cast
-
 class ExploreViewController: UIViewController {
   
   @IBOutlet var collectionView: UICollectionView!
@@ -13,6 +11,28 @@ class ExploreViewController: UIViewController {
         
         initialize()
     }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier! {
+    case Segue.locationList.rawValue:
+      showLocationList(segue: segue)
+    case Segue.restaurantList.rawValue:
+      showRestaurantList(segue: segue)
+    default:
+      print("segue not added")
+    }
+  
+  }
+  
+  // if a location has not been selected
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    if identifier == Segue.restaurantList.rawValue,
+       selectedCity == nil {
+      showLocationRequiredAlert()
+      return false
+    }
+    return true
+  }
 
 }
 
@@ -30,6 +50,7 @@ extension ExploreViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     manager.numberOfExploreItems()
   }
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath) as! ExploreCell
@@ -55,8 +76,33 @@ private extension ExploreViewController {
     }
     viewController.selectedCity = selectedCity
   }
-  @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
+  
+  func showRestaurantList(segue: UIStoryboardSegue) {
+     //  checks to see whether the destination view controller is the RestaurantListViewController instance
+    if let viewController = segue.destination as? RestaurantListViewController,
+      let city = selectedCity,
+      let index = collectionView.indexPathsForSelectedItems?.first?.row {
+      // the RestaurantListViewController instance's selectedCuisine property is set to the name of the instance located at that index in the items array
+      viewController.selectedCuisine = manager.exploreItem(at: index).name
+      //  the RestaurantListViewController instance's selectedCity property will be assigned the value stored in city.
+      viewController.selectedCity = city
+    }
   }
+  
+  func showLocationRequiredAlert() {
+    let alertController = UIAlertController(title: "Location Needed", message: "Please select a location.", preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(okAction)
+    present(alertController, animated: true, completion: nil)
+  }
+  
+  @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
+    let alertController = UIAlertController(title: "Location Needed", message: "Select Location", preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(okAction)
+    present(alertController, animated: true, completion: nil)
+  }
+  
   @IBAction func unwindLocationDone(segue: UIStoryboardSegue) {
     // the value of the LocationViewController instance's selectedCity property is assigned to the ExploreViewController instance's selectedCity property,
     if let viewController = segue.source as? LocationViewController {
