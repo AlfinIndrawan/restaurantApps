@@ -1,7 +1,7 @@
 import Foundation
 
 // This allows you to check if two LocationItem instances are equal.
-struct LocationItem: Equatable{
+struct LocationItem: Equatable {
   let city: String?
   let state: String?
 }

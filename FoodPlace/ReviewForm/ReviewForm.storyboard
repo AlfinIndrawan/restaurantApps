@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="4190" y="-832"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Review Form View Controller-->
         <scene sceneID="2Lj-qr-Q1h">
             <objects>
-                <tableViewController id="FMe-3H-aSV" sceneMemberID="viewController">
+                <tableViewController id="FMe-3H-aSV" customClass="ReviewFormViewController" customModule="FoodPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wbQ-Yd-wf4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
                                                     <color key="textColor" red="0.69019607839999997" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-x1-Dm8">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-x1-Dm8" customClass="RatingsView" customModule="FoodPlace" customModuleProvider="target">
                                                     <rect key="frame" x="153" y="7" width="108" height="17"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -141,11 +141,26 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" id="HhK-Tr-uQT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DoS-wK-OFu"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yDv-S1-VFB"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DoS-wK-OFu">
+                            <connections>
+                                <segue destination="4Ya-Tn-kes" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="kpa-FX-0UJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yDv-S1-VFB">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="FMe-3H-aSV" id="TOQ-7g-eSp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="uwv-vD-pti" id="dpw-Yg-bse"/>
+                        <outlet property="ratingsView" destination="Jgv-x1-Dm8" id="Pn3-ci-3FP"/>
+                        <outlet property="reviewTextView" destination="mfP-Ls-LpI" id="pES-Rc-AUj"/>
+                        <outlet property="titleTextField" destination="jdr-kq-Djw" id="VqE-GA-lsB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoT-q7-XLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4Ya-Tn-kes" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4924" y="-833"/>
         </scene>

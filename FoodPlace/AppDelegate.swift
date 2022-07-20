@@ -1,8 +1,3 @@
-//
-//  AppDelegate.swift
-//  LetsEat
-//
-
 import UIKit
 
 @main

@@ -16,18 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wAF-G0-6e1">
-                                <rect key="frame" x="55.5" y="247.5" width="303.5" height="401"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wAF-G0-6e1" secondAttribute="height" multiplier="240:317" id="0HZ-co-Dc7"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoApp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-r2-PUR">
+                                <rect key="frame" x="76" y="309" width="262" height="278"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="wAF-G0-6e1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Jl5-NR-l3W"/>
-                            <constraint firstItem="wAF-G0-6e1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TIs-TH-etF"/>
+                            <constraint firstItem="fqJ-r2-PUR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6dg-1E-Lw4"/>
+                            <constraint firstItem="fqJ-r2-PUR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Jsm-bg-o1p"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,7 +34,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="303.5" height="399"/>
+        <image name="LogoApp" width="262" height="278"/>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

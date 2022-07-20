@@ -1,21 +1,33 @@
 import UIKit
 
-class RestaurantListViewController: UIViewController,  UICollectionViewDelegate {
+class RestaurantListViewController: UIViewController, UICollectionViewDelegate {
     
-    private let manager = RestaurantDataManager()
-    var selectedRestaurant: RestaurantItem?
-    var selectedCity: LocationItem?
-    var selectedCuisine: String?
+  private let manager = RestaurantDataManager()
+  var selectedRestaurant: RestaurantItem?
+  var selectedCity: LocationItem?
+  var selectedCuisine: String?
     
-    @IBOutlet var collectionView: UICollectionView!
+  @IBOutlet var collectionView: UICollectionView!
     
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+  // Before the RestaurantListViewController instance transitions to another view controller, the segue identifier is checked. If the segue identifier is showDetail, then the showRestaurantDetail method is executed.
+  // Only the segue between the Restaurant List View Controller Scene and the Restaurant Detail View Controller Scene has the showDetail identifier
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let identier = segue.identifier {
+      switch identier {
+      case Segue.showDetail.rawValue:
+        showRestaurantDetail(segue: segue)
+      default:
+        print("segue not added")
+      }
+    }
+  }
     
-    override func viewDidAppear(_ animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         createData()
         setupTitle()
@@ -25,12 +37,20 @@ class RestaurantListViewController: UIViewController,  UICollectionViewDelegate 
 
 // MARK: Private Extension
 private extension RestaurantListViewController {
+    // This method first checks if the segue destination is an instance of RestaurantDetailViewController, and gets the index of the collection view cell that was tapped.
+    // Then, manager returns the RestaurantItem instance stored at that index, which is assigned to selectedRestaurant.
+    func showRestaurantDetail(segue: UIStoryboardSegue) {
+      if let viewController = segue.destination as?
+          RestaurantDetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first {
+        selectedRestaurant = manager.restaurantItem(at: indexPath.row)
+        viewController.selectedRestaurant = selectedRestaurant
+      }
+    }
     func createData() {
         guard let city = selectedCity?.city, let cuisine = selectedCuisine else {
             return
         }
-        manager.fetch(location: city, selectedCuisine: cuisine) {
-            restaurantItems in
+        manager.fetch(location: city, selectedCuisine: cuisine) { restaurantItems in
             if !restaurantItems.isEmpty {
                 collectionView.backgroundView = nil
             } else {

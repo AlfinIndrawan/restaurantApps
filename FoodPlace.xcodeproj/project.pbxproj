@@ -20,8 +20,10 @@
 		7C376B302880579600C5FB39 /* RestaurantDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B2F2880579600C5FB39 /* RestaurantDataManager.swift */; };
 		7C376B32288057A700C5FB39 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B31288057A700C5FB39 /* RestaurantCell.swift */; };
 		7C376B34288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B33288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift */; };
+		7C37F6A0288504AD00C42F6A /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F69F288504AD00C42F6A /* RatingsView.swift */; };
 		7C41701F286206F200640D72 /* Locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C41701E286206F200640D72 /* Locations.plist */; };
 		7C78DA2B286435420049FD29 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C78DA2A286435420049FD29 /* RestaurantDetailViewController.swift */; };
+		7C9F689528881393008AF1E2 /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F689428881393008AF1E2 /* ReviewFormViewController.swift */; };
 		7CA99E362869E7C500583FF0 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA99E352869E7C500583FF0 /* LocationItem.swift */; };
 		7CA99E382869ED5600583FF0 /* ExploreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA99E372869ED5600583FF0 /* ExploreHeaderView.swift */; };
 		7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBE82172841250200FBE06C /* ExploreViewController.swift */; };
@@ -68,8 +70,10 @@
 		7C376B2F2880579600C5FB39 /* RestaurantDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDataManager.swift; sourceTree = "<group>"; };
 		7C376B31288057A700C5FB39 /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		7C376B33288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestaurantListViewController.swift 20-51-24-051.swift"; sourceTree = "<group>"; };
+		7C37F69F288504AD00C42F6A /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 		7C41701E286206F200640D72 /* Locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Locations.plist; sourceTree = "<group>"; };
 		7C78DA2A286435420049FD29 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		7C9F689428881393008AF1E2 /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
 		7CA99E352869E7C500583FF0 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
 		7CA99E372869ED5600583FF0 /* ExploreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHeaderView.swift; sourceTree = "<group>"; };
 		7CBE82172841250200FBE06C /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				7CCBCF222863516700F526F6 /* ReviewForm.storyboard */,
+				7C37F69F288504AD00C42F6A /* RatingsView.swift */,
+				7C9F689428881393008AF1E2 /* ReviewFormViewController.swift */,
 			);
 			path = ReviewForm;
 			sourceTree = "<group>";
@@ -435,12 +441,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C376B34288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift in Sources */,
+				7C9F689528881393008AF1E2 /* ReviewFormViewController.swift in Sources */,
 				7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */,
 				7CCD4D092840DDAB00019AFD /* ViewController.swift in Sources */,
 				7C171F76285AF4BE007CD969 /* ExploreItem.swift in Sources */,
 				7CA99E362869E7C500583FF0 /* LocationItem.swift in Sources */,
 				7C171F7B285B2299007CD969 /* ExploreCell.swift in Sources */,
 				7CA99E382869ED5600583FF0 /* ExploreHeaderView.swift in Sources */,
+				7C37F6A0288504AD00C42F6A /* RatingsView.swift in Sources */,
 				7C17ADA82861F7C8004D9315 /* LocationDataManager.swift in Sources */,
 				7C13C840286320250005298C /* RestaurantItem.swift in Sources */,
 				7C376B152880358500C5FB39 /* NoDataView.swift in Sources */,
@@ -597,8 +605,8 @@
 		7CCD4D162840DDAD00019AFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
@@ -626,8 +634,8 @@
 		7CCD4D172840DDAD00019AFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
