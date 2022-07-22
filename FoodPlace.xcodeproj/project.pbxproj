@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C07AFE828895BBB00FED309 /* FilterData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C07AFE728895BBB00FED309 /* FilterData.plist */; };
+		7C07AFEA28895BF600FED309 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07AFE928895BF600FED309 /* FilterItem.swift */; };
+		7C07AFEC28895C7700FED309 /* FilterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07AFEB28895C7700FED309 /* FilterDataManager.swift */; };
+		7C07AFEE2889698600FED309 /* ImageFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07AFED2889698600FED309 /* ImageFiltering.swift */; };
 		7C13C83E28631FD70005298C /* MapLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C13C83D28631FD70005298C /* MapLocations.plist */; };
 		7C13C840286320250005298C /* RestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13C83F286320250005298C /* RestaurantItem.swift */; };
 		7C171F74285AE774007CD969 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C171F73285AE774007CD969 /* ExploreData.plist */; };
@@ -22,6 +26,8 @@
 		7C376B34288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B33288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift */; };
 		7C37F6A0288504AD00C42F6A /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F69F288504AD00C42F6A /* RatingsView.swift */; };
 		7C41701F286206F200640D72 /* Locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C41701E286206F200640D72 /* Locations.plist */; };
+		7C552C87288981B800ACE54D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C552C86288981B800ACE54D /* FilterCell.swift */; };
+		7C552C89288986A500ACE54D /* PhotoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C552C88288986A500ACE54D /* PhotoFilterViewController.swift */; };
 		7C78DA2B286435420049FD29 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C78DA2A286435420049FD29 /* RestaurantDetailViewController.swift */; };
 		7C9F689528881393008AF1E2 /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F689428881393008AF1E2 /* ReviewFormViewController.swift */; };
 		7CA99E362869E7C500583FF0 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA99E352869E7C500583FF0 /* LocationItem.swift */; };
@@ -57,6 +63,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C07AFE728895BBB00FED309 /* FilterData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterData.plist; sourceTree = "<group>"; };
+		7C07AFE928895BF600FED309 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
+		7C07AFEB28895C7700FED309 /* FilterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataManager.swift; sourceTree = "<group>"; };
+		7C07AFED2889698600FED309 /* ImageFiltering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFiltering.swift; sourceTree = "<group>"; };
 		7C13C83D28631FD70005298C /* MapLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MapLocations.plist; sourceTree = "<group>"; };
 		7C13C83F286320250005298C /* RestaurantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantItem.swift; sourceTree = "<group>"; };
 		7C171F73285AE774007CD969 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
@@ -72,6 +82,8 @@
 		7C376B33288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestaurantListViewController.swift 20-51-24-051.swift"; sourceTree = "<group>"; };
 		7C37F69F288504AD00C42F6A /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 		7C41701E286206F200640D72 /* Locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Locations.plist; sourceTree = "<group>"; };
+		7C552C86288981B800ACE54D /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		7C552C88288986A500ACE54D /* PhotoFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterViewController.swift; sourceTree = "<group>"; };
 		7C78DA2A286435420049FD29 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		7C9F689428881393008AF1E2 /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
 		7CA99E352869E7C500583FF0 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
@@ -119,6 +131,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C07AFE628895BAC00FED309 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C07AFE728895BBB00FED309 /* FilterData.plist */,
+				7C07AFE928895BF600FED309 /* FilterItem.swift */,
+				7C07AFEB28895C7700FED309 /* FilterDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7C13C83B28631F640005298C /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +274,11 @@
 		7CCBCF1E2863514000F526F6 /* PhotoFilter */ = {
 			isa = PBXGroup;
 			children = (
+				7C07AFE628895BAC00FED309 /* Model */,
 				7CCBCF1F2863514C00F526F6 /* PhotoFilter.storyboard */,
+				7C07AFED2889698600FED309 /* ImageFiltering.swift */,
+				7C552C86288981B800ACE54D /* FilterCell.swift */,
+				7C552C88288986A500ACE54D /* PhotoFilterViewController.swift */,
 			);
 			path = PhotoFilter;
 			sourceTree = "<group>";
@@ -402,6 +428,7 @@
 				7CE99DE628697FE90074AE2E /* San Antonio.json in Resources */,
 				7CE99DE528697FE90074AE2E /* Boston.json in Resources */,
 				7CE99DE928697FE90074AE2E /* Aspen.json in Resources */,
+				7C07AFE828895BBB00FED309 /* FilterData.plist in Resources */,
 				7CE99DE228697FE90074AE2E /* Philadelphia.json in Resources */,
 				7CE99DE728697FE90074AE2E /* Chicago.json in Resources */,
 				7CCBCF1B28634F0F00F526F6 /* RestaurantDetail.storyboard in Resources */,
@@ -440,6 +467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C07AFEA28895BF600FED309 /* FilterItem.swift in Sources */,
+				7C552C89288986A500ACE54D /* PhotoFilterViewController.swift in Sources */,
 				7C376B34288057CA00C5FB39 /* RestaurantListViewController.swift 20-51-24-051.swift in Sources */,
 				7C9F689528881393008AF1E2 /* ReviewFormViewController.swift in Sources */,
 				7CBE82182841250200FBE06C /* ExploreViewController.swift in Sources */,
@@ -450,6 +479,7 @@
 				7CA99E382869ED5600583FF0 /* ExploreHeaderView.swift in Sources */,
 				7C37F6A0288504AD00C42F6A /* RatingsView.swift in Sources */,
 				7C17ADA82861F7C8004D9315 /* LocationDataManager.swift in Sources */,
+				7C07AFEC28895C7700FED309 /* FilterDataManager.swift in Sources */,
 				7C13C840286320250005298C /* RestaurantItem.swift in Sources */,
 				7C376B152880358500C5FB39 /* NoDataView.swift in Sources */,
 				7C171F78285B05F3007CD969 /* ExploreDataManager.swift in Sources */,
@@ -460,8 +490,10 @@
 				7CBEC9F1286325C8000F8035 /* MapDataManager.swift in Sources */,
 				7CCBCF1428633CF200F526F6 /* DataManager.swift in Sources */,
 				7C376B302880579600C5FB39 /* RestaurantDataManager.swift in Sources */,
+				7C07AFEE2889698600FED309 /* ImageFiltering.swift in Sources */,
 				7CCD4D072840DDAB00019AFD /* SceneDelegate.swift in Sources */,
 				7CCBCF1D28634FDC00F526F6 /* Segue.swift in Sources */,
+				7C552C87288981B800ACE54D /* FilterCell.swift in Sources */,
 				7CCBCF16286342A100F526F6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +645,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPlace/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FoodPlace;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses your camera to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -642,6 +676,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPlace/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FoodPlace;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses your camera to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

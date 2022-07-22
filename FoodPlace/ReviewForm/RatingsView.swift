@@ -82,7 +82,7 @@ private extension RatingsView {
   
   func updateRating(with newValue: Double) {
     // updateRating(with:) checks to see if value is not equal to the current rating and between 0 and 5. If it is, value is assigned to rating.
-    if (self.rating != newValue && newValue >= 0 && newValue <= Double(totalStars)){
+    if (self.rating != newValue && newValue >= 0 && newValue <= Double(totalStars)) {
       self.rating = newValue
     }
   }

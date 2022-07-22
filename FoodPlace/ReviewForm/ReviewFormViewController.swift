@@ -1,10 +1,3 @@
-//
-//  ReviewFormViewController.swift
-//  FoodPlace
-//
-//  Created by Alfin on 20/7/22.
-//
-
 import UIKit
 
 class ReviewFormViewController: UITableViewController {
