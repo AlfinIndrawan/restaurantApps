@@ -245,7 +245,7 @@
                                                                     <rect key="frame" x="-0.5" y="0.0" width="120" height="62"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <connections>
-                                                                        <segue destination="GBa-F2-6Oj" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="9tb-aG-qwY"/>
+                                                                        <segue destination="GBa-F2-6Oj" kind="presentation" identifier="showPhotoFilter" modalPresentationStyle="fullScreen" id="9tb-aG-qwY"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -290,7 +290,7 @@
                                                                     <rect key="frame" x="-0.5" y="0.0" width="120" height="62"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <connections>
-                                                                        <segue destination="XG8-Ri-pIR" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="lDE-DR-HB9"/>
+                                                                        <segue destination="XG8-Ri-pIR" kind="presentation" identifier="showReview" modalPresentationStyle="fullScreen" id="lDE-DR-HB9"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -390,7 +390,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQS-bL-0F2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQS-bL-0F2">
                                                     <rect key="frame" x="15" y="10" width="54.5" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="S3e-8j-SY0"/>
@@ -399,7 +399,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syM-kD-sxl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syM-kD-sxl">
                                                     <rect key="frame" x="77.5" y="12" width="321.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ZO2-ne-hLb"/>
@@ -425,19 +425,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-xs-IGC">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-xs-IGC">
                                                     <rect key="frame" x="17" y="4" width="380" height="208.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-l0-bwa">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-l0-bwa">
                                                             <rect key="frame" x="0.0" y="0.0" width="380" height="208.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="eZM-l0-bwa" secondAttribute="trailing" id="Sdm-4h-CrV"/>
-                                                        <constraint firstItem="eZM-l0-bwa" firstAttribute="top" secondItem="Wxn-xs-IGC" secondAttribute="top" id="bdN-yS-x0c"/>
-                                                        <constraint firstItem="eZM-l0-bwa" firstAttribute="leading" secondItem="Wxn-xs-IGC" secondAttribute="leading" id="pfw-8R-OGp"/>
-                                                        <constraint firstAttribute="bottom" secondItem="eZM-l0-bwa" secondAttribute="bottom" id="sxi-2f-TxW"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -471,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="4596" y="-349"/>
         </scene>
-        <!--View Controller-->
+        <!--Reviews View Controller-->
         <scene sceneID="s68-WA-D2y">
             <objects>
-                <viewController id="I7Z-yA-lrD" sceneMemberID="viewController">
+                <viewController id="I7Z-yA-lrD" customClass="ReviewsViewController" customModule="FoodPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b2e-3Y-CNB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -489,7 +484,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="0gs-9C-p7g">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="0gs-9C-p7g" customClass="ReviewCell" customModule="FoodPlace" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="350" height="208"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -531,7 +526,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-Mn-9W5">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-Mn-9W5" customClass="RatingsView" customModule="FoodPlace" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="25" width="117" height="25"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -558,8 +553,19 @@
                                             <constraint firstItem="G9K-FW-IS7" firstAttribute="leading" secondItem="0gs-9C-p7g" secondAttribute="leading" constant="8" id="znA-Od-JGY"/>
                                         </constraints>
                                         <size key="customSize" width="350" height="208"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="yJy-Me-hbd" id="4sR-wK-GEy"/>
+                                            <outlet property="nameLabel" destination="0Ee-lM-dfY" id="Yek-jT-npf"/>
+                                            <outlet property="ratingsView" destination="CZq-Mn-9W5" id="u97-CG-GTp"/>
+                                            <outlet property="reviewLabel" destination="Ltw-TD-YVU" id="hDj-6a-BJp"/>
+                                            <outlet property="titleLabel" destination="G9K-FW-IS7" id="M8j-81-Ltd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="I7Z-yA-lrD" id="Gum-C5-NkW"/>
+                                    <outlet property="delegate" destination="I7Z-yA-lrD" id="Qg2-nD-4Mr"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KYY-TR-pBi"/>
@@ -570,6 +576,9 @@
                             <constraint firstItem="G3d-i3-aYj" firstAttribute="top" secondItem="b2e-3Y-CNB" secondAttribute="top" id="yJA-SW-7TR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="G3d-i3-aYj" id="Sf3-zR-jK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sv-SZ-nNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -677,10 +686,10 @@
     </scenes>
     <resources>
         <image name="LogoApp" width="262" height="278"/>
-        <image name="camera.fill" catalog="system" width="32" height="32"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="heart-unselected" width="44" height="44"/>
         <image name="icon-calendar" width="16" height="16"/>
-        <image name="pencil" catalog="system" width="32" height="32"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="time-bg" width="68" height="27"/>
         <namedColor name="LetsEat Dark Gray">
             <color red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

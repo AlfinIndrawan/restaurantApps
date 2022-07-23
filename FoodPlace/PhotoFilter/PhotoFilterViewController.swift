@@ -24,6 +24,18 @@ private extension PhotoFilterViewController {
     // checks the user authorization status for the use of the camera
     checkSource()
   }
+  func saveSelectedPhoto() {
+    if let mainImage = self.mainImageView.image {
+      var restPhotoItem = RestaurantPhotoItem()
+      restPhotoItem.date = Date()
+      restPhotoItem.photo = mainImage.preparingThumbnail(of: CGSize(width: 100, height: 100))
+      if let selRestID = selectedRestaurantID {
+        restPhotoItem.restaurantID = Int64(selRestID)
+      }
+      CoreDataManager.shared.addPhoto(restPhotoItem)
+    }
+    dismiss(animated: true, completion: nil)
+  }
   func setupCollectionView() {
     let layout = UICollectionViewFlowLayout()
     // set the scroll direction, section insets, inter-item spacing, and line spacing properties, and assign it to the collection view.
@@ -68,6 +80,9 @@ private extension PhotoFilterViewController {
   }
   @IBAction func onPhotoTapped (_ sender: Any) {
     checkSource()
+  }
+  @IBAction func onSaveTapped(_ sender: Any) {
+    saveSelectedPhoto()
   }
 }
 

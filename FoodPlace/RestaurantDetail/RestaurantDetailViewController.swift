@@ -16,7 +16,20 @@ class RestaurantDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+        createRating()
     }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let identifier = segue.identifier {
+      switch identifier {
+      case Segue.showReview.rawValue:
+        showReview(segue: segue)
+      case Segue.showPhotoFilter.rawValue:
+        showPhotoFilter(segue: segue)
+      default:
+        print("Segue not added")
+      }
+    }
+  }
 }
 
 private extension RestaurantDetailViewController {
@@ -28,9 +41,32 @@ private extension RestaurantDetailViewController {
   }
   @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {
   }
+  func showReview(segue: UIStoryboardSegue) {
+    guard let navController = segue.destination as? UINavigationController, let viewController = navController.topViewController as? ReviewFormViewController else {
+      return
+    }
+    viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+  }
+  func showPhotoFilter(segue: UIStoryboardSegue) {
+    guard let navController = segue.destination as? UINavigationController, let viewController = navController.topViewController as? PhotoFilterViewController else {
+      return
+    }
+    viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+  }
   func createRating() {
-    ratingsView.rating = 3.5
     ratingsView.isEnabled = true
+    // assigns the selectedRestaurant instance's restaurantID property to restaurantID
+    if let restaurantID = selectedRestaurant?.restaurantID {
+      // gets all the reviews with restaurantID's restaurant identifier value, and calculates the average rating.
+      let ratingValue = CoreDataManager.shared.fetchRestaurantRating(by: restaurantID)
+      ratingsView.rating = ratingValue
+      if ratingValue.isNaN {
+        overallRatingLabel.text = "0.0"
+      } else {
+        let roundedValue = ((ratingValue * 10).rounded() / 10)
+        overallRatingLabel.text = "\(roundedValue)"
+      }
+    }
   }
   func setupLabels() {
     guard let restaurant = selectedRestaurant else {
@@ -96,4 +132,5 @@ private extension RestaurantDetailViewController {
       }
     }
   }
+  
 }
