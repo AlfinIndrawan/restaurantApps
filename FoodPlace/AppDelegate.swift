@@ -4,6 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        initialize()
         return true
     }
 
@@ -19,3 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension CoreDataManager {
     static var shared = CoreDataManager()
   }
+
+private extension AppDelegate {
+  func initialize() {
+    setupDefaultColors()
+  }
+  func setupDefaultColors() {
+    UIBarButtonItem.appearance().tintColor = .systemRed
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemRed], for: UIControl.State.selected)
+    UINavigationBar.appearance().tintColor = .systemRed
+  }
+}

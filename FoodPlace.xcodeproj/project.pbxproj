@@ -19,6 +19,7 @@
 		7C171F7B285B2299007CD969 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C171F7A285B2299007CD969 /* ExploreCell.swift */; };
 		7C17ADA42861E24F004D9315 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C17ADA32861E24F004D9315 /* LocationViewController.swift */; };
 		7C17ADA82861F7C8004D9315 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C17ADA72861F7C8004D9315 /* LocationDataManager.swift */; };
+		7C210801288FE291004BD9D2 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C210800288FE291004BD9D2 /* Device.swift */; };
 		7C376B152880358500C5FB39 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B142880358500C5FB39 /* NoDataView.swift */; };
 		7C376B192880491E00C5FB39 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C376B182880491E00C5FB39 /* NoDataView.xib */; };
 		7C376B302880579600C5FB39 /* RestaurantDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C376B2F2880579600C5FB39 /* RestaurantDataManager.swift */; };
@@ -81,6 +82,8 @@
 		7C171F7A285B2299007CD969 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		7C17ADA32861E24F004D9315 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		7C17ADA72861F7C8004D9315 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		7C210800288FE291004BD9D2 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		7C210802288FECDF004BD9D2 /* FoodPlace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPlace.entitlements; sourceTree = "<group>"; };
 		7C376B142880358500C5FB39 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		7C376B182880491E00C5FB39 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		7C376B2F2880579600C5FB39 /* RestaurantDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDataManager.swift; sourceTree = "<group>"; };
@@ -289,6 +292,7 @@
 				7CE99DCF28697FBF0074AE2E /* JSON */,
 				7CCBCF1328633CF200F526F6 /* DataManager.swift */,
 				7CCBCF1C28634FDC00F526F6 /* Segue.swift */,
+				7C210800288FE291004BD9D2 /* Device.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -344,6 +348,7 @@
 		7CCD4D032840DDAB00019AFD /* FoodPlace */ = {
 			isa = PBXGroup;
 			children = (
+				7C210802288FECDF004BD9D2 /* FoodPlace.entitlements */,
 				7CEB7D5C288BF884001069D1 /* Reviews */,
 				7CCBCF212863515F00F526F6 /* ReviewForm */,
 				7CCBCF1E2863514000F526F6 /* PhotoFilter */,
@@ -528,6 +533,7 @@
 				7C13C840286320250005298C /* RestaurantItem.swift in Sources */,
 				7C376B152880358500C5FB39 /* NoDataView.swift in Sources */,
 				7C171F78285B05F3007CD969 /* ExploreDataManager.swift in Sources */,
+				7C210801288FE291004BD9D2 /* Device.swift in Sources */,
 				7C17ADA42861E24F004D9315 /* LocationViewController.swift in Sources */,
 				7CCD4D052840DDAB00019AFD /* AppDelegate.swift in Sources */,
 				7C376B32288057A700C5FB39 /* RestaurantCell.swift in Sources */,
@@ -687,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = FoodPlace/FoodPlace.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
@@ -707,6 +714,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.GoEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -718,6 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = FoodPlace/FoodPlace.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R2DDAH64G;
@@ -738,6 +747,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alfinindrawan.GoEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

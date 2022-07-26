@@ -10,16 +10,8 @@ class MapDataManager: DataManager {
   var annotations: [RestaurantItem] {
     items
   }
-  // swiftlint:disable force_try
-  private func loadData() -> [[String: AnyObject]] {
-    guard let path = Bundle.main.path(forResource: "MapLocations", ofType: "plist"),
-          let itemsData = FileManager.default.contents(atPath: path),
-          let items = try! PropertyListSerialization.propertyList(from: itemsData, format: nil) as? [[String: AnyObject]]
-    else {
-      return [[:]]
-    }
-    return items
-  }
+ 
+
   // This method has a completion method parameter. The completion method will be used to process the result when the method has finished execution.
   func fetch(completion: (_ annotations: [RestaurantItem]) -> ()) {
     let manager = RestaurantDataManager()

@@ -38,6 +38,8 @@ extension LocationViewController: UITableViewDataSource {
 private extension LocationViewController {
   func initialize() {
     manager.fetch()
+    title = "Select a Location"
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
 }
 

@@ -29,14 +29,26 @@ class RestaurantListViewController: UIViewController, UICollectionViewDelegate {
     
   override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        createData()
-        setupTitle()
+        initialize()
     }
 
 }
 
 // MARK: Private Extension
 private extension RestaurantListViewController {
+  
+  func initialize() {
+    createData()
+    setupTitle()
+    setupCollectionView()
+  }
+  func setupCollectionView() {
+    let flow = UICollectionViewFlowLayout()
+    flow.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+    flow.minimumInteritemSpacing = 0
+    flow.minimumLineSpacing = 7
+    collectionView.collectionViewLayout = flow
+  }
     // This method first checks if the segue destination is an instance of RestaurantDetailViewController, and gets the index of the collection view cell that was tapped.
     // Then, manager returns the RestaurantItem instance stored at that index, which is assigned to selectedRestaurant.
     func showRestaurantDetail(segue: UIStoryboardSegue) {
@@ -95,4 +107,21 @@ extension RestaurantListViewController: UICollectionViewDataSource {
         }
         return cell
     }
+}
+
+extension RestaurantListViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    var columns: CGFloat = 0
+    if Device.isPad {
+      columns = 3
+    } else {
+      columns = traitCollection.horizontalSizeClass == .compact ? 1 : 2
+    }
+    let viewWidth = collectionView.frame.size.width
+    let inset = 7.0
+    let contentWidth = viewWidth - inset * (columns + 1)
+    let cellWidth = contentWidth / columns
+    let cellHeight = 312.0
+    return CGSize(width: cellWidth, height: cellHeight)
+  }
 }
